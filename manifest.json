@@ -1,0 +1,28 @@
+﻿{
+  "name": "Topszótár",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Topszótár kiegészítő",
+  "browser_action": {
+    "default_icon": "browser-action-icon.png",
+	"default_title": "Topszótár"
+  },
+  "content_scripts": [ {
+	"js": [ "content.js" ],
+    "matches": [ "http://*/*", "https://*/*" ],
+    "run_at": "document_end"	
+   } ],
+  "icons": {
+	"16": "extension-favicon.png",
+	"48": "extension-pageicon.png",
+	"128": "icon128.png"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "tabs",
+	"contextMenus"	
+  ],
+  "background": {
+	"page": "background.html"
+  }
+}
