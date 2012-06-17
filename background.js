@@ -25,6 +25,9 @@ function init() {
 		});
 	});
 	
+	//set default options (if we don't call this here, we have to open the options page at every fresh install)
+	setDefaultOptions();
+
 	//send (options) message to content.js
 	handleRequest();
 }
@@ -42,6 +45,14 @@ function onClickTopszotar(info, tab) {
 	
 	// Open new tab
 	chrome.tabs.create({"index": tabnum, "url": url});
+}
+
+//set defaults 
+function setDefaultOptions() {
+	
+	if (!window.localStorage['hotkeys']) {
+		window.localStorage['hotkeys'] = 'true';
+	}
 }
 
 

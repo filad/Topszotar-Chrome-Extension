@@ -18,8 +18,8 @@ function init() {
 		inputs[i].addEventListener('change', saveOptions);
 	}
 	
-	//Set the localStorage 
-	setOptions();	
+	//Set the checkboxes based on localStorage
+	setCheckboxes();	
 }
 
 //get the tabLinks in the sidebar
@@ -69,13 +69,7 @@ function updatePage() {
 	//console.log(tabs);
 }
 
-function setOptions() {
-
-	//set defaults
-	if (!window.localStorage['hotkeys']) {
-		window.localStorage['hotkeys'] = 'true';
-	}
-	
+function setCheckboxes() {	
 	//set inputs
 	if (window.localStorage['hotkeys'] === 'true')	$("hotkeys").checked = 'true';
 	else $("hotkeys").checked = '';
